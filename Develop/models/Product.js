@@ -33,8 +33,10 @@ Product.init(
     },
     category_id: {
       type: Sequelize.INTEGER,
-      references: 'Category',
-      referencesKey: 'id',
+      references: {
+        model: 'Category',
+        key: 'id',
+      }
     },
 
   },
