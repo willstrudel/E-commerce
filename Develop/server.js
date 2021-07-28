@@ -3,11 +3,6 @@ require('dotenv').config();
 
 
 
-
-
-
-
-
 const express = require('express');
 const routes = require('./routes');
 const sequelize = require('sequelize');
@@ -22,6 +17,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(routes);
+app.get('/', (req, res) => {
+  res.sendStatus(200);
+});
 
 const dbConnect = require('./config/connection');
 const models = require('./models');
